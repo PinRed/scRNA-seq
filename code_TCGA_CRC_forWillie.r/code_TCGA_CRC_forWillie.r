@@ -4,8 +4,8 @@
 ##################################################################
 
 
-Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
-setwd(Raw.Data.Path)
+#Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
+#setwd(Raw.Data.Path)
 
 COAD.Clinical<-read.table(file="survival_COAD_survival.txt",sep="\t",head=TRUE,quote = "\"")
 head(COAD.Clinical)
