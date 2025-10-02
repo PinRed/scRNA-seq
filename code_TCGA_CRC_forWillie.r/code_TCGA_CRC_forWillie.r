@@ -15,7 +15,6 @@
 
 
 
-<<<<<<< HEAD
 #Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
 #setwd(Raw.Data.Path)
 
@@ -28,7 +27,7 @@ head(COAD.Clinical2[,1:10])
 TCGA.temp2<-read.table(file="TCGA.COAD.sampleMap_HiSeqV2.data",sep="\t",head=TRUE,quote = "\"")
 head(TCGA.temp2[,1:10])
 TCGA.temp<-read.table(file="TCGA.COAD.sampleMap_GAV2.data",sep="\t",head=TRUE,quote = "\"")
-=======
+
 # Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
 # setwd(Raw.Data.Path)
 
@@ -133,16 +132,16 @@ sample_info <- c(
 
 
 #### TCGA.COAD.sampleMap_HiSeqV2 AND TCGA.COAD.sampleMap_GAV2 ####
-<<<<<<< HEAD
+
 TCGA.temp2<-read.table(file="data/TCGA.COAD.sampleMap_HiSeqV2.data",sep="\t",head=TRUE,quote = "\"")
 head(TCGA.temp2[,1:10])
 TCGA.temp<-read.table(file="data/TCGA.COAD.sampleMap_GAV2.data",sep="\t",head=TRUE,quote = "\"")
->>>>>>> 83a24d3 (Version 3)
+
 head(TCGA.temp[,1:10])
 dim(TCGA.temp)
 dim(TCGA.temp2)
 
-<<<<<<< HEAD
+
 # TCGA.temp2[,-1]<-head(TCGA.temp2[,1:10])
 # match(colnames(TCGA.temp),"TCGA.AG.3611.01")
 
@@ -176,8 +175,6 @@ common.namesN
 length(common.namesN)
 
 
-=======
-=======
 
 # Load expression data: Assumed to be log2(RSEM + 1)
 coad_hiseq_logrsem<-read.table(file="data/TCGA.COAD.sampleMap_HiSeqV2.data",sep="\t",head=TRUE,quote = "\"")
@@ -186,7 +183,7 @@ coad_gav2_logrsem<-read.table(file="data/TCGA.COAD.sampleMap_GAV2.data",sep="\t"
 head(coad_gav2_logrsem[,1:10])
 dim(coad_gav2_logrsem)
 dim(coad_hiseq_logrsem)
->>>>>>> 9530aed (Add week 4)
+
 
 # Note: coad_hiseq_logrsem[,1] and coad_gav2_logrsem[,1] are assumed to be Gene Names/IDs
 
@@ -641,10 +638,8 @@ pheatmap(gene_correlation_matrix,
 
 
 
-<<<<<<< HEAD
 #### Analysis ####
->>>>>>> 83a24d3 (Version 3)
-=======
+
 
 ### LASSO on Expression Data (Tumor vs Normal)
 
@@ -682,4 +677,3 @@ cat("Number of selected genes:", length(selected_genes), "\n")
 head(selected_genes)
 coad_hiseq_logrsem[selected_genes,1]
 
->>>>>>> 9530aed (Add week 4)
