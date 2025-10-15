@@ -18,15 +18,15 @@
 #Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
 #setwd(Raw.Data.Path)
 
-COAD.Clinical<-read.table(file="survival_COAD_survival.txt",sep="\t",head=TRUE,quote = "\"")
+COAD.Clinical<-read.table(file="data/survival_COAD_survival.txt",sep="\t",head=TRUE,quote = "\"")
 head(COAD.Clinical)
 
-COAD.Clinical2<-read.table(file="TCGA.COAD.sampleMap_COAD_clinicalMatrix",sep="\t",head=TRUE,quote = "\"")
+COAD.Clinical2<-read.table(file="data/TCGA.COAD.sampleMap_COAD_clinicalMatrix",sep="\t",head=TRUE,quote = "\"")
 head(COAD.Clinical2[,1:10])
 
-TCGA.temp2<-read.table(file="TCGA.COAD.sampleMap_HiSeqV2.data",sep="\t",head=TRUE,quote = "\"")
+TCGA.temp2<-read.table(file="data/TCGA.COAD.sampleMap_HiSeqV2.data",sep="\t",head=TRUE,quote = "\"")
 head(TCGA.temp2[,1:10])
-TCGA.temp<-read.table(file="TCGA.COAD.sampleMap_GAV2.data",sep="\t",head=TRUE,quote = "\"")
+TCGA.temp<-read.table(file="data/TCGA.COAD.sampleMap_GAV2.data",sep="\t",head=TRUE,quote = "\"")
 
 # Raw.Data.Path<-"E:/Dropbox/Work_temp/IO_nanoStrings_CRC/TCGA"
 # setwd(Raw.Data.Path)

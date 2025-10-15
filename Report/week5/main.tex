@@ -1,0 +1,60 @@
+\documentclass[12pt, aspectratio=43]{beamer} 
+
+\input{package.tex} % 載入封包與文檔配置
+
+% Title, Subtitle, Author, Institute, Date
+\title[\textbf{Week 5 Report}]{Week 5 Report}
+\author[Chen, Pin-Jui]{Chen, Pin-Jui}
+\date[Oct 17, 2025]{Oct 17, 2025}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Index
+\begin{frame}
+  \frametitle{Index}
+  \tableofcontents
+\end{frame}
+
+\section{RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome}
+
+\begin{frame}{Read}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.8\linewidth]{Figure/Read.jpg}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Alternative Splicing}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.6\linewidth]{Figure/splicing.jpg}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{count}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\linewidth]{Figure/old_count.jpg}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{RSEM}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=1.1\linewidth]{Figure/RSEM.jpg}
+	\end{figure}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]{參考文獻}
+    \printbibliography % 使用 biblatex 的指令來列印參考文獻
+\end{frame}
+
+
+
+\end{document}
