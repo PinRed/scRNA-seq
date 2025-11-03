@@ -1,0 +1,160 @@
+\documentclass[12pt, aspectratio=43]{beamer} 
+
+\input{package.tex} % 載入封包與文檔配置
+
+% Title, Subtitle, Author, Institute, Date
+\title[\textbf{Week 5 Report}]{Week 5 Report}
+\author[Chen, Pin-Jui]{Chen, Pin-Jui}
+\date{\today}
+
+\begin{document}
+	
+	% Title page frame
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% Index
+	\section{RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome}
+	
+	\begin{frame}
+		\tableofcontents[currentsection,]
+	\end{frame}
+	\begin{frame}{Read}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.8\linewidth]{Figure/Read.jpg}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Alternative Splicing}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=0.6\linewidth]{Figure/splicing.jpg}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{count}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{Figure/old_count.jpg}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{RSEM}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=1.1\linewidth]{Figure/RSEM.jpg}
+		\end{figure}
+	\end{frame}
+
+	
+	\section{Pathway analysis}
+	\begin{frame}
+		\tableofcontents[currentsection,]
+	\end{frame}
+	
+	\begin{frame}{Pathway Analysis Methods}
+		\textbf{Goal :} 
+		\begin{enumerate}
+			\item Looking at DEGs alone often can’t explain the biological mechanism. Pathway analysis, using databases like KEGG or Reactome, helps identify which pathways and functions these genes are involved in.
+			
+			\item It detects which pathways (e.g., cell cycle, apoptosis, immune signaling) are significantly changed between different conditions, treatments, or diseases.
+			
+			\item It helps summarize which cellular behaviors or biological processes may be affected based on the DEGs.
+		\end{enumerate}
+		
+	\end{frame}
+
+	
+	\begin{frame}{Pathway Analysis Methods}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{Figure/pathway.png}
+		\end{figure}
+		\footfullcite{khatri2012ten}
+	\end{frame}
+	
+	\begin{frame}{Method Limitations}
+		ORA Limitations :
+		\begin{enumerate}
+			\item Ignore any values associated with them such as probe intensities.
+			\item Using an arbitrary threshold lead information loss.
+			\item Assuming independence between genes amounts to \textbf{competitive null hypothesis testing} (see below), which ignores the correlation structure between genes.
+			\item Assumes that each pathway is independent of other pathways, which is erroneous. 
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Pathway Analysis Methods}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{Figure/pathway.png}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Method Limitations}
+		FCS Limitations :
+		\begin{enumerate}
+			\item Assumes that each pathway is independent of other pathways, which is erroneous. 
+			\item Rank-Based or Statistic-Based
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{Pathway Analysis Methods}
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=\linewidth]{Figure/pathway.png}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Pathway Topology}
+		\begin{enumerate}
+			\item ScorePAGE \cite{rahnenfuhrer2004calculating} : \\
+			Computes the similarity between each pair of genes in a pathway. This similarity is analogous to the gene-level statistics used in FCS methods.
+			\item Impact Factor (IF) analysis 
+			\cite{draghici2007systems} : \\
+			IF analysis models a signaling pathway
+			as a graph, defines a gene-level statistic,
+			called perturbation factor (PF) of a gene.
+			\begin{center}
+				$PF(g_i) = \Delta F(g_i) + \sum^n_{j=1} \beta_{ji} \cdot \dfrac{PF(g_j)}{N_{ds}(g_j)} $
+			\end{center}
+			Then Calculate IF :
+			\begin{center}
+				$IF(P_i) = log\left(\dfrac{1}{p_i}\right) + \dfrac{|\sum_{g \in P_i}PF(g)|}{N_{de}(P_i)}$
+			\end{center}
+		\end{enumerate}
+	\end{frame}	
+	
+	\begin{frame}
+		Pathways are not static, but change their interaction structure according to physiological conditions. 
+		
+		\vskip 0.2cm
+		\textbf{NetGSA} \cite{shojaie2009analysis} accounts for the the change in correlation as well as the change in network structure as experimental conditions change.
+		
+		\begin{enumerate}
+			\item accounts for a gene’s baseline expression.
+			\item the pathways be represented as directed acyclic graphs.
+		\end{enumerate}
+		
+	\end{frame}
+	
+	\begin{frame}{Pathway Analysis}
+		\textbf{Category :}
+		\begin{enumerate}
+			\item Knowledge-based approaches
+			\item Data-driven approaches
+			\item Multi-omics pathway analysis
+			\item Dynamic / temporal pathway analysis
+			\item Single cell pathway analysis
+		\end{enumerate}
+	\end{frame}
+	
+	
+	\begin{frame}[allowframebreaks]{參考文獻}
+	    \printbibliography % 使用 biblatex 的指令來列印參考文獻
+	\end{frame}
+
+
+
+\end{document}
